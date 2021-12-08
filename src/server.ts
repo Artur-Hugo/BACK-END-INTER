@@ -1,5 +1,6 @@
 import express from 'express';
 import routes from './routes';
+import { globalErrors } from './middlewares/globalErrors';
 
 const app = express();
 const PORT = 3333;
