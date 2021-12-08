@@ -1,4 +1,7 @@
 class AppError{
+    catch(arg0: (err: string | undefined) => never) {
+        throw new Error('Method not implemented.');
+    }
     public readonly message: string;
     public readonly statusCode: number;
     public readonly data?: any;
