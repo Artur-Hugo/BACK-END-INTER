@@ -3,9 +3,9 @@
     "type": "postgres",
     "host": "localhost",
     "port": 5432,
-    "username": "admin",
-    "password": "dio-inter",
-    "database": "inter",
+    "username": "postgres",
+    "password": "root",
+    "database": "postgres",
     "entities": ["src/entity/*.ts"],
     "logging": false,
     "synchronize": true
