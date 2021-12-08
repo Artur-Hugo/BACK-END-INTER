@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "rootDir": "./src",
+      "outDir": "./build",
+      "esModuleInterop": true,
+      "strict": true,
+      //Aonde vai buscar a tipagem dentro do projeto
+      "emitDecoratorMetadata": true,
+      "strictPropertyInitialization": false,
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "typeRoots": [
+          "./src/@types",
+          "./@types",
+          "./node_modules/@types"
+      ]
+    }
+  }
