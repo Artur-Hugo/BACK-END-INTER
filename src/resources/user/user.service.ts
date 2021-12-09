@@ -50,6 +50,7 @@ export default class UserService{
     }
 
     async signup(user: UserSignUp){
+        try{
         const userRepository = getRepository(User);
 
         const existUser = await userRepository.findOne({where: {email: user.email}})
@@ -83,7 +84,30 @@ export default class UserService{
   
         
         return {accessToken: token}
+    }
+        catch (error) {
+            console.log(error)
+          }
 
     }
+
+    async me(user: Partial<User>) {
+        try{
+        const userRepository = getRepository(User);
+        const currentUser = await userRepository.findOne({where: {id: user.id}})
+
+        if(!currentUser){
+            throw new AppError('Usuário não econtrado', 401);
+        }
+
+        // @ts-expect-error ignora
+        delete currentUser.password
+
+        return currentUser;
+
+        }catch (error) {
+            console.log(error)
+          }
+     }
 
 }
